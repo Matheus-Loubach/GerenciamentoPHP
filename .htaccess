@@ -1,0 +1,16 @@
+Options -Indexes
+RewriteEngine On
+
+# Verifique se o arquivo ou diretório real não existe
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Redirecione tudo para index.php com o parâmetro 'router'
+RewriteRule ^(.*)$ index.php?router=$1 [L]
+
+
+RewriteEngine On
+RewriteBase /
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*) index.php

@@ -1,27 +1,19 @@
 <?php
 
-define("HOST", "mvcphp.mysql.uhserver.com");
-define("DATABASENAME", "mvcphp");
-define("USER", "affonso");
-define("PASSWORD", "Ma1832ma@");
+include 'connect.php';
 
-//DAO-> DATA ACESS OBJECT
 
 class PessoaDAO
 {
     private $connection;
 
-    // Conexão com o banco de dados
     public function __construct()
     {
-        try {
-            $this->connection = new PDO('mysql:host=' . HOST . ';dbname=' . DATABASENAME, USER, PASSWORD);
-        } catch (PDOException $e) {
-            echo 'Error' . $e->getMessage();
-            die();
-        }
+        // Instanciar a classe Database para obter a conexão
+        $database = new connect();
+        $this->connection = $database->getConnection();
     }
-
+    
     // Método POST
     public function insert(ClientModel $model)
     {
@@ -49,7 +41,7 @@ class PessoaDAO
     public function update(ClientModel $model)
     {
         $sql = "UPDATE clients SET name=?, email=?, phone=?, sex=?, city=? WHERE id=? ";
-       
+
         $stmt = $this->connection->prepare($sql);
         $stmt->bindValue(1, $model->name);
         $stmt->bindValue(2, $model->email);
@@ -80,7 +72,7 @@ class PessoaDAO
         include_once "./app/Models/ClientModel.php";
 
         $sql = "SELECT * from clients WHERE id = ?";
-        
+
         $stmt = $this->connection->prepare($sql);
         $stmt->bindValue(1, $id);
         $stmt->execute();

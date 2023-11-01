@@ -38,7 +38,7 @@
                      <td><?= $item->sex ?></td>
                      <td><?= $item->city ?></td>
                      <td> <a class="edit" href="/form/update?id=<?= $item->id ?> ">EDIT</a></td>
-                     <td> <a class="delete" href="/home/delete?id=<?= $item->id ?> ">X</a></td>
+                     <td> <a class="delete" href="/form/delete?id=<?= $item->id ?> ">X</a></td>
                   </tr>
                <?php endforeach; ?>
                <?php if (count($model->rows) ==  0) : ?>
