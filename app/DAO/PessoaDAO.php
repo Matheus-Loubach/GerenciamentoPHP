@@ -1,8 +1,8 @@
 <?php
 
-define("HOST", "localhost");
-define("DATABASENAME", "id21484632_mvcphp");
-define("USER", "id21484632_admin");
+define("HOST", "mvcphp.mysql.uhserver.com");
+define("DATABASENAME", "mvcphp");
+define("USER", "affonso");
 define("PASSWORD", "Ma1832ma@");
 
 //DAO-> DATA ACESS OBJECT
