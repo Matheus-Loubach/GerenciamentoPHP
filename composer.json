@@ -1,0 +1,25 @@
+{
+    "name": "matheus/gerenciamento",
+    "autoload": {
+        "psr-4": {
+            "Matheus\\Gerenciamento\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Matheus Loubach",
+            "email": "34719454+Matheus-Loubach@users.noreply.github.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {},
+    "autoload-dev": {
+        "psr-4": {
+            "app\\": "app/",
+            "core\\": "core/"
+        },
+        "files": [
+            "Config/config.php"
+        ]
+    }
+}

@@ -1,0 +1,21 @@
+.container_list{
+    display: flex;
+    justify-content: center;
+    margin: auto 0;
+    text-align: center;
+}
+
+.container_list tr td{
+    background-color: gray;
+    padding: 10px;
+    color: #000000;
+    font-weight: bold;
+}
+
+.container_list .edit{
+    color: #00ff00;
+}
+
+.container_list .delete{
+    color: #b60000;
+}
